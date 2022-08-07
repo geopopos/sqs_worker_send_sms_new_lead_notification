@@ -15,6 +15,7 @@ SQS = boto3.client('sqs')
 
 
 def producer(event, context):
+    print(event.get('body'))
     status_code = 200
     message = ''
 
