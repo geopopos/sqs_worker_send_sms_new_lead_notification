@@ -48,6 +48,7 @@ def consumer(event, context):
     message_body = event.get('message_body')
     to_number = event.get('to_number')
 
+    breakpoint()
 
     message = client.messages.create(
                      body=message_body,
