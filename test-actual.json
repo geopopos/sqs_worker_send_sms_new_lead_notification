@@ -1,5 +1,6 @@
 {
-    "notification_type": "lead",
-    "message_body": "🚨New Maryland Lead Alert! 🚨\n    City: Middle River\n    Zip Code: 21220\n    Project Scope: Replace Complete Roof\n    Project Timeline: URGENT\n    You Can Purchase The Lead Below 👇 [First Come First Serve]\n        https://buy.stripe.com/test_3cs6rUdrN0nl1mU6oq\n\n    NOTE: Make sure to use the email you signed up with so there is no delay in getting your lead: George@volumeup.agency",
-    "to_number": "4436438559"
-}
+    "Records": [
+        {
+            "messageId": "011d81fb-35e7-4be6-ade3-7a18bb5a15cd",
+            "receiptHandle": "AQEBSzkqFv+l7jjv1iBPWZXptmw5FLFo6miKB8eoR+Wb13/npDvQ0BTHdoynwkWEU9sBuIrSuebloMXqsxdFdmBnAo97yQfG6s3k1o5OY7kHHLJvbxkNM+o/bAXJYmgFRqBCitEeKE35LmaedTh5cXQRARsRMLWUI7Cx+lDpPw4pCohZkP/pJw0RvgB85FKBcr0OO5CxCRRyz1oNxDJG8EnBZwXH+4ML8S62JAkfEoTsbnZ5n4jNUcXQJXGSy9z+YioZSmsJE1tM5LC1nuVItyfZ4SFAun2HJEenYAaP2nO2bPkzDgM5+crc401uGF7tMbvysRmWXnqg4WZ2QsSs0IAc0JVfquEZhSa1E24YHluG8rgarIYUUMczGUraLBxIylMIpw+YOF30VmL96lSuM12ElTXPjVU2Uyo9wwoghgN226Q=",
+            "body": "{\"notification_type\": \"lead\", \"message_body\": \"\\ud83d\\udea8New Maryland Lead Alert! \\ud83d\\udea8\\n    City: Middle River\\n    Zip Code: 21220\\n    Project Scope: Replace Complete Roof\\n    Project Timeline: URGENT\\n    You Can Purchase The Lead Below \\ud83d\\udc47 [First Come First Serve]\\n        https: //buy.stripe.com/test_3cs6rUdrN0nl1mU6oq\\n\\n    NOTE: Make sure to use the email you signed up with so there is no delay in getting your lead: George@volumeup.agency\", \"to_number\": \"+14436438559\"}", "attributes": {"ApproximateReceiveCount": "1", "SentTimestamp": "1659909405820", "SenderId": "AIDA5GB2J23JAIEESHEIK", "ApproximateFirstReceiveTimestamp": "1659909405827"}, "messageAttributes": {}, "md5OfBody": "1a7bdf6a485d5c903aca5e2bbb57954f", "eventSource": "aws:sqs", "eventSourceARN": "arn:aws:sqs:us-east-1:906360379090:send-new-lead-notification-dev-jobs", "awsRegion": "us-east-1"}]}

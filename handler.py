@@ -47,8 +47,9 @@ def consumer(event, context):
     auth_token = os.getenv('TWILIO_AUTH_TOKEN')
     client = Client(account_sid, auth_token)
     # grab message body and number to send message to
-    message_body = event.get('message_body')
-    to_number = event.get('to_number')
+    event_body = json.loads(event.get('Records')[0].get('body'))
+    message_body = event_body.get('message_body')
+    to_number = event_body.get('to_number')
     if not to_number and not message_body:
         return {'statusCode': 400, 'body': json.dumps({'message': 'sms request requires a message_body and to_number field'})}
 
