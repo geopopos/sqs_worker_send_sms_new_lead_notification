@@ -56,8 +56,3 @@ def consumer(event, context):
 
     print(message.sid)
     
-    # for record in event['Records']:
-    #     logger.info(f'Message body: {record["body"]}')
-    #     logger.info(
-    #         f'Message attribute: {record["messageAttributes"]["AttributeName"]["stringValue"]}'
-    #     )
