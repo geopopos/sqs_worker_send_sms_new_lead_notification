@@ -27,6 +27,7 @@ functions:
 
 plugins:
   - serverless-lift
+  - serverless-python-requirements
 package:
   patterns:
     - '!node_modules/**'
