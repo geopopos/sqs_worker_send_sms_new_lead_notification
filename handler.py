@@ -42,12 +42,19 @@ def producer(event, context):
 
 def consumer(event, context):
     # set twilio account sid and auth token
+    logger.info('Received message: {}'.format(event))
     account_sid = os.getenv('TWILIO_ACCOUNT_SID')
     auth_token = os.getenv('TWILIO_AUTH_TOKEN')
     client = Client(account_sid, auth_token)
     # grab message body and number to send message to
     message_body = event.get('message_body')
     to_number = event.get('to_number')
+    if not to_number and not message_body:
+        return {'statusCode': 400, 'body': json.dumps({'message': 'sms request requires a message_body and to_number field'})}
+
+    logger.info(f"MESSAGE BODY :==> {message_body}")
+    logger.info(f"TO NUMBER:==> {to_number}")
+
 
     message = client.messages.create(
                      body=message_body,
