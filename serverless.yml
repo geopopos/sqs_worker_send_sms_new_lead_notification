@@ -6,6 +6,8 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: python3.8
+  profile: serverless-admin
+  region: us-east-1
   environment:
     TWILIO_ACCOUNT_SID: ${param:TWILIO_ACCOUNT_SID}
     TWILIO_AUTH_TOKEN: ${param:TWILIO_AUTH_TOKEN}
@@ -25,7 +27,8 @@ functions:
           path: /produce
     environment:
       QUEUE_URL: ${construct:jobs.queueUrl}
-      
+  consumer:
+    handler: handler.consumer 
 
 plugins:
   - serverless-lift
