@@ -4,6 +4,9 @@ import os
 
 import boto3
 
+from twilio.rest import Client
+
+
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
@@ -37,8 +40,25 @@ def producer(event, context):
 
 
 def consumer(event, context):
-    for record in event['Records']:
-        logger.info(f'Message body: {record["body"]}')
-        logger.info(
-            f'Message attribute: {record["messageAttributes"]["AttributeName"]["stringValue"]}'
-        )
+    # set twilio account sid and auth token
+    account_sid = os.getenv('TWILIO_ACCOUNT_SID')
+    auth_token = os.getenv('TWILIO_AUTH_TOKEN')
+    client = Client(account_sid, auth_token)
+    # grab message body and number to send message to
+    message_body = event.get('message_body')
+    to_number = event.get('to_number')
+
+
+    message = client.messages.create(
+                     body=message_body,
+                     from_='+14439032242',
+                     to=to_number
+                 )
+
+    print(message.sid)
+    
+    # for record in event['Records']:
+    #     logger.info(f'Message body: {record["body"]}')
+    #     logger.info(
+    #         f'Message attribute: {record["messageAttributes"]["AttributeName"]["stringValue"]}'
+    #     )

@@ -22,10 +22,11 @@ functions:
           path: /produce
     environment:
       QUEUE_URL: ${construct:jobs.queueUrl}
+      TWILIO_ACCOUNT_SID: ${param:TWILIO_ACCOUNT_SID}
+      TWILIO_AUTH_TOKEN: ${param:TWILIO_AUTH_TOKEN}
 
 plugins:
   - serverless-lift
-
 package:
   patterns:
     - '!node_modules/**'
