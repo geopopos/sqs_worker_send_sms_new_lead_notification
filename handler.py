@@ -55,5 +55,5 @@ def consumer(event, context):
                      to=to_number
                  )
 
-    print(message.sid)
+    logger.info(message.sid)
     
