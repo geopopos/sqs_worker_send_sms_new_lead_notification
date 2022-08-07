@@ -13,7 +13,7 @@ provider:
     TWILIO_AUTH_TOKEN: ${param:TWILIO_AUTH_TOKEN}
 
 constructs:
-  jobs:
+  send-sms-queue:
     type: queue
     worker:
       handler: handler.consumer
